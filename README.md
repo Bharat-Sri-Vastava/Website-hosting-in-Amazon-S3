@@ -1,69 +1,91 @@
-# Host a Website on Amazon S3
-This project demonstrates how I hosted a static website using **Amazon S3**, a scalable cloud storage service by AWS.  
-It’s a beginner-friendly project that helped me learn the essentials of hosting static content in the cloud.
+# AWS Mini Projects
+
+This repository contains my **AWS-related mini projects** showcasing practical hands-on experience with Amazon Web Services.  
+Currently, it includes:
+
+1. **Static Website Hosting on Amazon S3**
+2. **Data Visualization using Amazon S3 and QuickSight**
 
 ---
 
-## What is Amazon S3?
+## 📂 Project 1: Host a Website on Amazon S3
+
+This project demonstrates how I hosted a static website using **Amazon S3**, a scalable cloud storage service by AWS.  
+It’s a beginner-friendly project that helped me learn the essentials of hosting static content in the cloud.
+
+### What is Amazon S3?
 Amazon S3 (Simple Storage Service) is a secure, durable, and highly available **object storage service**.  
 It’s commonly used to store and retrieve data from anywhere on the web.  
 A lesser-known but powerful feature is **static website hosting**, which allows you to serve HTML, CSS, and images directly from an S3 bucket.
 
----
-
-## Project Highlights
+### Project Highlights
 - **Duration:** ~45 minutes  
 - **Hosting Type:** Static website hosting from an S3 bucket  
 - **Outcome:** Successfully hosted a simple webpage (`index.html`) with CSS and images
 
----
+### Steps to Host a Website on Amazon S3
+1. **Set Up an S3 Bucket**  
+   - Created a new bucket with a **globally unique name** in the **Mumbai** region.  
+   - Understood **ACLs** (Access Control Lists) and public access settings.
 
-## Steps to Host a Website on Amazon S3
+2. **Upload Website Files**  
+   - Uploaded `index.html`, CSS, and images to the bucket.
 
-### 1. Set Up an S3 Bucket
-- Logged in to the AWS Management Console and navigated to **S3**.
-- Created a new bucket with a **globally unique name**.
-- Selected **Mumbai** as the closest AWS region to reduce latency and cost.
-- Understood **ACLs** (Access Control Lists) and public access settings.
+3. **Enable Static Website Hosting**  
+   - Enabled static website hosting and set `index.html` as the index document.
 
-### 2. Upload Website Files
-- Uploaded `index.html`, CSS, and image files to the bucket.
-- Ensured all files were placed at the root of the bucket.
+4. **Update Permissions**  
+   - Resolved 403 Forbidden Error by making files public via **ACLs**.
 
-### 3. Enable Static Website Hosting
-- Opened **Bucket Properties** and enabled **Static Website Hosting**.
-- Set `index.html` as the **index document**.
+### Lessons Learned
+- Fixing permission-related errors for public hosting.  
+- Understanding AWS ACLs, bucket policies, and hosting settings.
 
-### 4. Update Permissions
-- Initially got a **403 Forbidden Error** due to private object permissions.
-- Fixed it by making the uploaded files public via **ACLs**.
+📄 **Documentation:** [S3 hosting.pdf](./S3%20hosting.pdf)
 
 ---
 
-## Accessing the Website
-Once static hosting was enabled, S3 generated a **bucket endpoint URL**.  
-Using this URL, I was able to access the website from any device connected to the internet.
+## 📂 Project 2: Data Visualization with Amazon S3 and QuickSight
+
+This project demonstrates how to integrate **Amazon S3** with **Amazon QuickSight** to create interactive data visualizations.  
+The dataset used is `netflix_titles.csv`.
+
+### Tools & Concepts Learned
+- **Amazon S3**: Creating buckets, uploading datasets, managing permissions.
+- **manifest.json**: Modified to include actual S3 bucket URL so QuickSight can interpret the dataset.
+- **Amazon QuickSight**: Creating an account, importing datasets, building visualizations, applying filters, and publishing dashboards.
+
+### Steps
+1. **Upload Files to S3**  
+   - Uploaded `netflix_titles.csv` and updated `manifest.json` with S3 bucket path.
+
+2. **Connect S3 to QuickSight**  
+   - Linked QuickSight to the dataset using the manifest file.
+
+3. **Create Visualizations**  
+   - **Donut Chart**: Number of Netflix titles by country.  
+   - **Horizontal Bar Chart**: TV Shows vs Movies by release year.  
+   - **Filtered Genre Analysis**: Thrillers, TV Comedies, Action & Adventure, filtered after 2015.
+
+4. **Publish & Export Dashboard**  
+   - Published the dashboard for team access.  
+   - Exported the dashboard as PDF.
+
+### Lessons Learned
+- How QuickSight uses `manifest.json` to interpret S3 data.
+- Data filtering for focused insights.
+- Dashboard publishing and export workflow.
+
+📄 **Documentation:** [QuickSight Visualization.pdf](./QuickSight%20Visualization.pdf)
 
 ---
 
-## Lessons Learned
-- **Error Handling:** Learned how to fix the 403 Forbidden error by updating access permissions.  
-- **Public Accessibility:** Realized the importance of proper permissions for public content.  
-- **AWS Concepts:** Understood how ACLs, bucket policies, and regions impact hosting.
+## 🚀 Future Work
+- Add more AWS-based mini projects (Lambda, DynamoDB, CloudFront, etc.).
+- Explore advanced QuickSight features like calculated fields.
+- Experiment with new visualization types (treemaps, heatmaps).
 
 ---
 
-## Project Outcomes
-- Successfully deployed a CSS Art Playground website on Amazon S3.  
-- Gained hands-on experience with AWS cloud storage and website hosting.  
-- Understood how permissions and configurations affect website accessibility.
-
----
-
-## PDF Documentation
-The complete step-by-step documentation can be found here: [S3 hosting.pdf](./S3%20hosting.pdf)
-
----
-
-## Want to Explore More?
-Check out [NextWork.org](https://nextwork.org) for more projects and resources.
+## 📢 Acknowledgments
+These projects were completed as part of learning activities on [NextWork](https://nextwork.org).
